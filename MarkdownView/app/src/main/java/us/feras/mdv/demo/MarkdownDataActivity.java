@@ -1,31 +1,36 @@
 package us.feras.mdv.demo;
 
+import net.dgardiner.markdown.flavours.github.GithubFlavour;
 import us.feras.mdv.MarkdownView;
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.EditText;
 
 public class MarkdownDataActivity extends AppCompatActivity {
 
 	private EditText markdownEditText;
-	private MarkdownView markdownView;
+	private MarkdownView mdv;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.markdown_view);
+
 		markdownEditText = (EditText) findViewById(R.id.markdownText);
-		markdownView = (MarkdownView) findViewById(R.id.markdownView);
+		mdv = (MarkdownView) findViewById(R.id.markdownView);
+
+		// Enable GFM
+		mdv.setFlavour(new GithubFlavour());
+
+		// Load initialize markdown text
 		String text = getResources().getString(R.string.md_sample_data);
 		markdownEditText.setText(text);
 		updateMarkdownView();
 
+		// Setup text changed listener
 		markdownEditText.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -39,11 +44,10 @@ public class MarkdownDataActivity extends AppCompatActivity {
 				updateMarkdownView();
 			}
 		});
-
-
 	}
 
 	private void updateMarkdownView() {
-		markdownView.loadMarkdown(markdownEditText.getText().toString());
+		// Reload markdown view
+		mdv.loadMarkdown(markdownEditText.getText().toString());
 	}
 }

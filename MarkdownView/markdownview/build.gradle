@@ -26,9 +26,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'org.markdownj:markdownj-core:0.4'
+    compile 'com.github.fuzeman:markdown-java:95ecd27'
+
+    testCompile 'junit:junit:4.12'
 }
 
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'

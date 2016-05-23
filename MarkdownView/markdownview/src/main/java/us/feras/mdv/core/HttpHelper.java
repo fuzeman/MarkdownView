@@ -1,45 +1,43 @@
-package us.feras.mdv.util;
+package us.feras.mdv.core;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * @author Feras Alnatsheh
  */
 
 public class HttpHelper {
-
 	private static final String CHARSET_UTF8 = "UTF-8";
 	public static final String CONTENT_TYPE_JSON = "json";
 	public static final String CONTENT_TYPE_XML = "xml";
 
 	// Timeout when reading from Input stream when a connection is established
 	// to a resource
-	private static final int DEFULT_READ_TIMEOUT = 5000;
+	private static final int DEFAULT_READ_TIMEOUT = 5000;
+
 	// Timeout for establishing a connection.
-	private static final int DEFULT_CONNECT_TIMEOUT = 5000;
+	private static final int DEFAULT_CONNECT_TIMEOUT = 5000;
 
 	static public Response get(String url, String query)
-			throws MalformedURLException, IOException {
-		return get(url, query, DEFULT_CONNECT_TIMEOUT, DEFULT_READ_TIMEOUT);
+			throws IOException {
+		return get(url, query, DEFAULT_CONNECT_TIMEOUT, DEFAULT_READ_TIMEOUT);
 	}
 
-	static public Response get(String url) throws MalformedURLException,
-			IOException {
-		return get(url, null, DEFULT_CONNECT_TIMEOUT, DEFULT_READ_TIMEOUT);
+	static public Response get(String url)
+			throws IOException {
+		return get(url, null, DEFAULT_CONNECT_TIMEOUT, DEFAULT_READ_TIMEOUT);
 	}
 
-	static public Response get(String url, String query, int connectTimeout,
-			int readTimeout) throws MalformedURLException, IOException {
+	static public Response get(String url, String query, int connectTimeout, int readTimeout)
+			throws IOException {
 		String fullUrl = url;
 		if (query != null && !query.equals("")) {
 			fullUrl += "?" + query;
@@ -52,14 +50,13 @@ public class HttpHelper {
 	}
 
 	static public Response post(String url, String query, String contentType)
-			throws MalformedURLException, IOException {
-		return post(url, query, contentType, DEFULT_CONNECT_TIMEOUT,
-				DEFULT_READ_TIMEOUT);
+			throws IOException {
+		return post(url, query, contentType, DEFAULT_CONNECT_TIMEOUT,
+				DEFAULT_READ_TIMEOUT);
 	}
 
-	static public Response post(String url, String query, String contentType,
-			int connectTimeout, int readTimeout) throws MalformedURLException,
-			IOException {
+	static public Response post(String url, String query, String contentType, int connectTimeout, int readTimeout)
+			throws IOException {
 		URLConnection connection = new URL(url).openConnection();
 		connection.setReadTimeout(readTimeout);
 		connection.setConnectTimeout(connectTimeout);
@@ -94,9 +91,8 @@ public class HttpHelper {
 	/*
 	 * Get the HTTP response message from the server.
 	 */
-	private static String getResponseMessage(InputStream inputStream,
-			HttpURLConnection connection) throws UnsupportedEncodingException,
-			IOException {
+	private static String getResponseMessage(InputStream inputStream, HttpURLConnection connection)
+			throws IOException {
 		String responseMessage = null;
 		StringBuffer sb = new StringBuffer();
 		InputStream dis = connection.getInputStream();
@@ -124,7 +120,6 @@ public class HttpHelper {
 	}
 
 	public static class Response {
-
 		private Set<Entry<String, List<String>>> httpResponseHeader;
 		private int httpResponseCode;
 		private String httpResponseMessage;
@@ -133,9 +128,8 @@ public class HttpHelper {
 		Response() {
 		}
 
-		Response(Set<Entry<String, List<String>>> httpResponseHeader,
-				int httpResponseCode, String httpResponseMessage,
-				String responseMessage) {
+		Response(Set<Entry<String, List<String>>> httpResponseHeader, int httpResponseCode,
+				 String httpResponseMessage, String responseMessage) {
 			setHttpResponseHeader(httpResponseHeader);
 			setHttpResponseCode(httpResponseCode);
 			setHttpResponseMessage(httpResponseMessage);

@@ -1,7 +1,7 @@
 package us.feras.mdv.demo;
 
+import net.dgardiner.markdown.flavours.github.GithubFlavour;
 import us.feras.mdv.MarkdownView;
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,10 +15,12 @@ public class MarkdownThemesActivity extends AppCompatActivity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.markdown_themes);
+
 		Spinner themesSpinner = (Spinner) findViewById(R.id.themes_spinner);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.md_themes, android.R.layout.simple_spinner_item);
+
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.md_themes, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		themesSpinner.setAdapter(adapter);
 		themesSpinner.setSelection(0);
@@ -26,12 +28,17 @@ public class MarkdownThemesActivity extends AppCompatActivity implements
 	}
 
 	@Override
-	public void onItemSelected(AdapterView<?> parent, View view, int pos,
-			long id) {
+	public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
 		MarkdownView mdv = (MarkdownView) findViewById(R.id.markdownView);
-		mdv.loadMarkdownFile("file:///android_asset/hello.md",
-				"file:///android_asset/markdown_css_themes/"
-						+ parent.getItemAtPosition(pos).toString() + ".css");
+
+		// Setup markdown view
+		mdv.setFlavour(new GithubFlavour());
+
+		// Load markdown from file
+		mdv.loadMarkdownAsset(
+			"file:///android_asset/hello.md",
+			"file:///android_asset/markdown_css_themes/" + parent.getItemAtPosition(pos).toString() + ".css"
+		);
 	}
 
 	@Override

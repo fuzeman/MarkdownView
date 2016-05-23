@@ -1,17 +1,22 @@
 package us.feras.mdv.demo;
 
+import net.dgardiner.markdown.flavours.github.GithubFlavour;
 import us.feras.mdv.MarkdownView;
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
 
 public class LocalMarkdownActivity extends AppCompatActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		MarkdownView webView = new MarkdownView(this);
-		setContentView(webView);
-		webView.loadMarkdownFile("file:///android_asset/hello.md");
+
+		MarkdownView mdv = new MarkdownView(this);
+		setContentView(mdv);
+
+		// Setup markdown view
+		mdv.setFlavour(new GithubFlavour());
+
+		// Load markdown from file
+		mdv.loadMarkdownAsset("file:///android_asset/hello.md");
 	}
 }
