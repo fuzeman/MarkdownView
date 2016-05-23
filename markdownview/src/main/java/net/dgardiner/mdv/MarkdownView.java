@@ -66,15 +66,15 @@ public class MarkdownView extends WebView {
 		loadMarkdown(markdown, null);
 	}
 
-	public void loadMarkdown(String data, String themeUrl) {
-		currentRequest = new LoadMarkdownTask.RawRequest(data, themeUrl);
+	public void loadMarkdown(String markdown, String themeUrl) {
+		currentRequest = new LoadMarkdownTask.RawRequest(markdown, themeUrl);
 
 		// Load markdown request
 		new LoadMarkdownTask(getContext(), processor, this).execute(currentRequest);
 	}
 
-	public void loadMarkdownAsset(String url) {
-		loadMarkdownAsset(url, null);
+	public void loadMarkdownAsset(String assetUri) {
+		loadMarkdownAsset(assetUri, null);
 	}
 
 	public void loadMarkdownAsset(String assetUri, String themeUrl) {
