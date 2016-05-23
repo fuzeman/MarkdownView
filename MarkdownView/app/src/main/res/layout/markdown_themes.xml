@@ -9,7 +9,7 @@
         android:layout_height="0dp"
         android:layout_weight="15" />
 
-    <us.feras.mdv.MarkdownView
+    <net.dgardiner.mdv.MarkdownView
         android:id="@+id/markdownView"
         android:layout_width="fill_parent"
         android:layout_height="0dip"

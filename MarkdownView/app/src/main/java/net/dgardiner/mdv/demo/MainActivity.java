@@ -1,4 +1,4 @@
-package us.feras.mdv.demo;
+package net.dgardiner.mdv.demo;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

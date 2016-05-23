@@ -1,9 +1,9 @@
-package us.feras.mdv.core;
+package net.dgardiner.mdv.core;
 
 import android.graphics.Bitmap;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import us.feras.mdv.MarkdownView;
+import net.dgardiner.mdv.MarkdownView;
 
 public class MarkdownWebClient extends WebViewClient {
     private static final String TAG = "MarkdownWebClient";

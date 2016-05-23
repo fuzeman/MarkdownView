@@ -1,4 +1,4 @@
-package us.feras.mdv.core;
+package net.dgardiner.mdv.core;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,10 +9,6 @@ import java.net.URLConnection;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
-
-/**
- * @author Feras Alnatsheh
- */
 
 public class HttpHelper {
 	private static final String CHARSET_UTF8 = "UTF-8";

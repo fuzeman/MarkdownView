@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 ext {
-    PUBLISH_GROUP_ID = 'us.feras.mdv'
+    PUBLISH_GROUP_ID = 'net.dgardiner.mdv'
     PUBLISH_ARTIFACT_ID = 'markdownview'
     PUBLISH_VERSION = '1.1.0'
 }

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "us.feras.mdv.demo"
+        applicationId "net.dgardiner.mdv.demo"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1

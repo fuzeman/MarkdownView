@@ -1,10 +1,10 @@
-package us.feras.mdv.core;
+package net.dgardiner.mdv.core;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import net.dgardiner.markdown.MarkdownProcessor;
-import us.feras.mdv.MarkdownView;
+import net.dgardiner.mdv.MarkdownView;
 
 import java.io.BufferedReader;
 import java.io.IOException;

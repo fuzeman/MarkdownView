@@ -1,16 +1,13 @@
-package us.feras.mdv;
+package net.dgardiner.mdv;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.webkit.WebView;
 import net.dgardiner.markdown.MarkdownProcessor;
 import net.dgardiner.markdown.flavours.base.Flavour;
-import us.feras.mdv.core.LoadMarkdownTask;
-import us.feras.mdv.core.MarkdownWebClient;
+import net.dgardiner.mdv.core.LoadMarkdownTask;
+import net.dgardiner.mdv.core.MarkdownWebClient;
 
-/**
- * @author Feras Alnatsheh
- */
 public class MarkdownView extends WebView {
 	private static final String TAG = "MarkdownView";
 

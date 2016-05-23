@@ -1,7 +1,7 @@
-package us.feras.mdv.demo;
+package net.dgardiner.mdv.demo;
 
 import net.dgardiner.markdown.flavours.github.GithubFlavour;
-import us.feras.mdv.MarkdownView;
+import net.dgardiner.mdv.MarkdownView;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
