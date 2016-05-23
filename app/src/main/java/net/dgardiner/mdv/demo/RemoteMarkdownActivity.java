@@ -36,7 +36,7 @@ public class RemoteMarkdownActivity extends AppCompatActivity implements
 		mdv.setWideViewPort(true);
 
 		// Load markdown from URL
-		mdv.loadMarkdownUrl("https://raw.github.com/falnatsheh/MarkdownView/master/README.md");
+		mdv.loadMarkdownUrl("https://raw.github.com/fuzeman/MarkdownView/master/README.md");
 	}
 
 	//
