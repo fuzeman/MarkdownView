@@ -48,7 +48,7 @@ Themes can be used with:
 mdv.loadMarkdown(<markdown>, "file:///android_asset/MyCustomTheme.css");
 ```
 
-Themes bundled with the library can be found [here](https://github.com/fuzeman/MarkdownView/tree/master/MarkdownViewDemo/assets/markdown_css_themes).
+Themes bundled with the library can be found [here](https://github.com/fuzeman/MarkdownView/tree/master/app/src/main/assets/markdown_css_themes).
 
 ## API
 
