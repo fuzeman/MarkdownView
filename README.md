@@ -1,6 +1,6 @@
 # MarkdownView
 
-[![][badge-license]](LICENSE.md)
+[![][badge-bintray]][badge-bintray-href] [![][badge-license]](LICENSE.md)
 
 MarkdownView provides a simple method of displaying Markdown in Android applications, with support for:
 
@@ -15,7 +15,7 @@ This is a fork of the original [MarkdownView](https://github.com/falnatsheh/Mark
 **Gradle**
 ```gradle
 repositories {
-    mavenCentral()
+    maven { url "http://dl.bintray.com/fuzeman/maven" }
 }
 
 dependencies { 
@@ -117,4 +117,6 @@ setPageFinishedListener(OnPageFinishedListener listener)
 ```
 
 
+[badge-bintray]: https://img.shields.io/bintray/v/fuzeman/maven/MarkdownView.svg?maxAge=2592000
+[badge-bintray-href]: https://bintray.com/fuzeman/maven/MarkdownView
 [badge-license]: https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square
