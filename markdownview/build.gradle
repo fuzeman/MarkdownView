@@ -27,7 +27,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.github.fuzeman:markdown-java:95ecd27'
+    compile 'net.dgardiner.markdown:markdown:1.0.0'
 
     testCompile 'junit:junit:4.12'
 }
