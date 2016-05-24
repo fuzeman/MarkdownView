@@ -62,13 +62,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/main/rs" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/jni" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/androidTest/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/androidTest/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/androidTest/assets" type="java-test-resource" />
@@ -76,6 +69,13 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/androidTest/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/androidTest/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../markdownview/src/test/rs" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/../../../markdownview/build/intermediates/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/../../../markdownview/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/../../../markdownview/build/intermediates/blame" />
