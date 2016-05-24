@@ -43,9 +43,9 @@ mdv.loadMarkdown("## Hello Markdown");
 
 ## Themes
 
-Themes can be applied with:
+Themes can be used with:
 ```java
-mdv.loadMarkdownAsset("file:///android_asset/hello.md", "file:///android_asset/MyCustomTheme.css");
+mdv.loadMarkdown(<markdown>, "file:///android_asset/MyCustomTheme.css");
 ```
 
 Themes bundled with the library can be found [here](https://github.com/fuzeman/MarkdownView/tree/master/MarkdownViewDemo/assets/markdown_css_themes).
