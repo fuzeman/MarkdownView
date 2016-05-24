@@ -92,6 +92,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../../markdownview/build/intermediates/transforms" />
       <excludeFolder url="file://$MODULE_DIR$/../../../markdownview/build/libs" />
       <excludeFolder url="file://$MODULE_DIR$/../../../markdownview/build/outputs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../markdownview/build/poms" />
       <excludeFolder url="file://$MODULE_DIR$/../../../markdownview/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
