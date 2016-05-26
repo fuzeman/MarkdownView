@@ -73,7 +73,7 @@ public class MarkdownView extends WebView {
 		// Reset state
 		currentRequest = null;
 		currentTask = null;
-		
+
 		// Load blank page
 		loadUrl("about:blank");
 	}

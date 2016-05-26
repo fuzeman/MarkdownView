@@ -1,3 +1,10 @@
+## 1.0.2
+
+**Changed**
+
+ - `clear()` method will now cancel existing tasks and reset the state
+
+
 ## 1.0.1
 
 **Added**
