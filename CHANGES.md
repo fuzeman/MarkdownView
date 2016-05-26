@@ -1,3 +1,10 @@
+## 1.0.3
+
+**Fixed**
+
+ - `onPageLoading` and `onPageFinished` events were being fired for "about:blank" pages
+
+
 ## 1.0.2
 
 **Changed**

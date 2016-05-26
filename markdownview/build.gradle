@@ -5,8 +5,8 @@ plugins {
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-def currentVersionCode = 3
-def currentVersionName = '1.0.2'
+def currentVersionCode = 4
+def currentVersionName = '1.0.3'
 def siteUrl = 'https://github.com/fuzeman/MarkdownView'
 def gitUrl = 'https://github.com/fuzeman/MarkdownView.git'
 
