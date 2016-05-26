@@ -64,7 +64,19 @@ public class MarkdownView extends WebView {
 	// Methods
 	//
 
-	public void clear() { loadUrl("about:blank"); }
+	public void clear() {
+		// Cancel existing task
+		if(currentTask != null) {
+			currentTask.cancel(true);
+		}
+
+		// Reset state
+		currentRequest = null;
+		currentTask = null;
+		
+		// Load blank page
+		loadUrl("about:blank");
+	}
 
 	public void loadMarkdown(String markdown) { loadMarkdown(markdown, null); }
 	public void loadMarkdown(String markdown, String themeUrl) { loadMarkdown(new LoadMarkdownTask.RawRequest(markdown, themeUrl)); }
