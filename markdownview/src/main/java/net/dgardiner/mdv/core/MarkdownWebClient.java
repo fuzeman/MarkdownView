@@ -16,6 +16,10 @@ public class MarkdownWebClient extends WebViewClient {
 
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
+        if(!url.equals("mdv://")) {
+            return;
+        }
+
         // Trigger event
         MarkdownView.OnPageLoadingListener listener = this.view.getPageLoadingListener();
 
@@ -26,6 +30,10 @@ public class MarkdownWebClient extends WebViewClient {
 
     @Override
     public void onPageFinished(WebView view, String url) {
+        if(!url.equals("mdv://")) {
+            return;
+        }
+
         // Trigger event
         MarkdownView.OnPageFinishedListener listener = this.view.getPageFinishedListener();
 
