@@ -1,6 +1,7 @@
 package net.dgardiner.mdv;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.webkit.WebView;
 import net.dgardiner.markdown.MarkdownProcessor;
@@ -14,6 +15,7 @@ public class MarkdownView extends WebView {
 	private final MarkdownProcessor processor;
 
 	private LoadMarkdownTask.Request currentRequest = null;
+	private LoadMarkdownTask currentTask = null;
 
 	public MarkdownView(Context context) {
 		super(context);
@@ -62,37 +64,26 @@ public class MarkdownView extends WebView {
 	// Methods
 	//
 
-	public void loadMarkdown(String markdown) {
-		loadMarkdown(markdown, null);
-	}
+	public void loadMarkdown(String markdown) { loadMarkdown(markdown, null); }
+	public void loadMarkdown(String markdown, String themeUrl) { loadMarkdown(new LoadMarkdownTask.RawRequest(markdown, themeUrl)); }
 
-	public void loadMarkdown(String markdown, String themeUrl) {
-		currentRequest = new LoadMarkdownTask.RawRequest(markdown, themeUrl);
+	public void loadMarkdownAsset(String assetUri) { loadMarkdownAsset(assetUri, null); }
+	public void loadMarkdownAsset(String assetUri, String themeUrl) { loadMarkdown(new LoadMarkdownTask.AssetRequest(assetUri, themeUrl)); }
 
-		// Load markdown request
-		new LoadMarkdownTask(getContext(), processor, this).execute(currentRequest);
-	}
+	public void loadMarkdownUrl(String url) { loadMarkdownUrl(url, null); }
+	public void loadMarkdownUrl(String url, String themeUrl) { loadMarkdown(new LoadMarkdownTask.WebRequest(url, themeUrl)); }
 
-	public void loadMarkdownAsset(String assetUri) {
-		loadMarkdownAsset(assetUri, null);
-	}
+	public void loadMarkdown(LoadMarkdownTask.Request request) {
+		currentRequest = request;
 
-	public void loadMarkdownAsset(String assetUri, String themeUrl) {
-		currentRequest = new LoadMarkdownTask.AssetRequest(assetUri, themeUrl);
+		// Cancel existing task
+		if(currentTask != null) {
+			currentTask.cancel(true);
+		}
 
-		// Load markdown request
-		new LoadMarkdownTask(getContext(), processor, this).execute(currentRequest);
-	}
-
-	public void loadMarkdownUrl(String url) {
-		loadMarkdownUrl(url, null);
-	}
-
-	public void loadMarkdownUrl(String url, String themeUrl) {
-		currentRequest = new LoadMarkdownTask.WebRequest(url, themeUrl);
-
-		// Load markdown request
-		new LoadMarkdownTask(getContext(), processor, this).execute(currentRequest);
+		// Load markdown in background
+		currentTask = new LoadMarkdownTask(getContext(), processor, this);
+		currentTask.execute(request);
 	}
 
 	//
