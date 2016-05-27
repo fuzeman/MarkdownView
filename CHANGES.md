@@ -1,3 +1,10 @@
+## 1.0.4
+
+**Fixed**
+
+ - `onPageFinished` event duplication
+
+
 ## 1.0.3
 
 **Fixed**
