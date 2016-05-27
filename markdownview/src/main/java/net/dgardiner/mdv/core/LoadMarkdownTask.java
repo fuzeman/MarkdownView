@@ -41,6 +41,9 @@ public class LoadMarkdownTask extends AsyncTask<LoadMarkdownTask.Request, Intege
             // Retrieve request
             this.request = params[0];
 
+            // Update request
+            this.request.onStarted();
+
             // Trigger page started event
             if(pageStartedListener != null) {
                 pageStartedListener.onPageStarted(this.request);
@@ -134,15 +137,23 @@ public class LoadMarkdownTask extends AsyncTask<LoadMarkdownTask.Request, Intege
     public static abstract class Request {
         private final String themeUrl;
 
+        private boolean finished = false;
+
         public Request(String themeUrl) {
             this.themeUrl = themeUrl;
         }
 
+        public abstract String getData(Context context);
         public String getThemeUrl() {
             return themeUrl;
         }
 
-        public abstract String getData(Context context);
+        public boolean isFinished() { return finished; }
+
+        public void onStarted() {
+            finished = false;
+        }
+        public void onFinished() { finished = true; }
     }
 
     public static class AssetRequest extends Request {

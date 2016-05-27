@@ -20,11 +20,18 @@ public class MarkdownWebClient extends WebViewClient {
             return;
         }
 
+        // Retrieve current request
+        LoadMarkdownTask.Request request = this.view.getCurrentRequest();
+
+        if(request.isFinished()) {
+            return;
+        }
+
         // Trigger event
         MarkdownView.OnPageLoadingListener listener = this.view.getPageLoadingListener();
 
         if(listener != null) {
-            listener.onPageLoading(this.view.getCurrentRequest());
+            listener.onPageLoading(request);
         }
     }
 
@@ -34,11 +41,21 @@ public class MarkdownWebClient extends WebViewClient {
             return;
         }
 
+        // Retrieve current request
+        LoadMarkdownTask.Request request = this.view.getCurrentRequest();
+
+        if(request.isFinished()) {
+            return;
+        }
+
+        // Update current request
+        request.onFinished();
+
         // Trigger event
         MarkdownView.OnPageFinishedListener listener = this.view.getPageFinishedListener();
 
         if(listener != null) {
-            listener.onPageFinished(this.view.getCurrentRequest());
+            listener.onPageFinished(request);
         }
     }
 }
