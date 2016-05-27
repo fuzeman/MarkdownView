@@ -1,3 +1,10 @@
+## 1.1.0
+
+**Changed**
+
+ - Bumped "net.dgardiner.markdown" dependency to 1.1.0
+
+
 ## 1.0.4
 
 **Fixed**

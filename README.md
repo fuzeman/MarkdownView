@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies { 
-    compile 'net.dgardiner.mdv:markdownview:1.0.4'
+    compile 'net.dgardiner.mdv:markdownview:1.1.0'
 }
 ```
 
